@@ -1,0 +1,82 @@
+<base href="https://docs.lume.io"><script src="./importmap.js"></script>
+<link rel="icon" href="https://fav.farm/🔥" />
+<title>Cube</title>
+<style>
+  html, body {height: 100%; margin: 0}
+  .invisible-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999; /* make sure it's on top of other elements */
+    opacity: 0; /* make it invisible */
+    cursor: pointer; /* keep the pointer cursor to indicate it's clickable */
+  }
+  .overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999; /* make sure it's on top of all other elements */
+    text-align: center;
+    font-size: 48px;
+    color: #fff; /* adjust the color to your liking */
+     /* allow clicks to pass through to underlying elements */
+  }
+  .overlay-text2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999; /* make sure it's on top of all other elements */
+    text-align: center;
+    font-size: 36px;
+    color: #fff; /* adjust the color to your liking */
+     /* allow clicks to pass through to underlying elements */
+    margin: 100px;
+  }
+  .invisible-link {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      opacity: 0;
+      cursor: pointer;
+    }
+</style>
+
+<lume-scene webgl="">
+  <lume-ambient-light intensity="0.3"></lume-ambient-light>
+  <lume-point-light align-point="0.5 0.5" position="250 250 250"></lume-point-light>
+  <lume-box id="myBox" size="100 100 100" align-point="0.5 0.5" mount-point="0.5 0.5 0.5" rotation="45 45 0" color="blue" opacity="0.5" sidedness="double" cast-shadow="false">
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="0.5 0.5 0.5"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="0 0 0"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="1 0 0"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="0 1 0"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="0 0 1"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="0 1 1"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="1 0 1"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="1 1 0"></lume-sphere>
+    <lume-sphere size="10 10 10" mount-point="0.5 0.5 0.5" color="darkblue" align-point="1 1 1"></lume-sphere>
+  </lume-box>
+</lume-scene>
+
+<script type="module">
+  import 'lume'
+  requestAnimationFrame(function loop() {
+    myBox.rotation.y += 0.5
+    myBox.rotation.x += 0.2
+    requestAnimationFrame(loop)
+  })
+</script>
+
+<div class="invisible-button">
+  
+    <button class="invisible-link" onclick="window.location.href='https://akdavis83.github.io/Sphere-Spinner/';"> </button>
+  </div>
+  
+  <div class="overlay-text" style="color: darkblue;"> Welcome Click Anywhere To Continue</div>
